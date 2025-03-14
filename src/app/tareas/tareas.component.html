@@ -1,1 +1,14 @@
-<p>tareas works!</p>
+<h1>Lista de tareas de: {{ nombreUsuario }}</h1>
+
+<div *ngIf="tareas.length > 0">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let tarea of tareas">{{ tarea }}</li>
+    </ul>
+</div>
+
+<div *ngIf="tareas.length == 0">
+    <p>Aun no hay tareas para mostrar</p>
+</div>
+
+<!-- <input (input)="($event)" placeholder="Ingresa una nueva tarea"> -->
+<button (click)="agregarTarea()">Agregar</button>
